@@ -2,9 +2,7 @@ with open("03_input") as file:
     mountain = list(file.readlines())
 list_line = []
 for line in mountain:
-    list_character = []
-    for character in line:
-        list_character.append(character)
+    list_character = list(line)
     list_line.append(list_character)
 
 len_line = len(list_line[0]) - 1
