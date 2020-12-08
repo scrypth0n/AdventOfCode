@@ -11,3 +11,4 @@ for i in nums:
 
 print('Solution 2 numbers: ', solution2)
 print('Solution 3 numbers: ', solution3)
+lol
