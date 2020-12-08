@@ -27,3 +27,4 @@ for line in passwords:
 
 print('Valid Passwords 01:', valid_1)
 print('Valid Passwords 02:', valid_2)
+lol

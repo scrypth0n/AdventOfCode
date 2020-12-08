@@ -23,3 +23,4 @@ for slope in slopes_to_check:
     trees_multiplication *= trees
     print('Right:', slope[0], '   Down:', slope[1], '   Trees:', trees)
 print('Trees Multiplication:', trees_multiplication)
+lol
