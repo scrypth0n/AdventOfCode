@@ -50,7 +50,6 @@ def find_false_jmp_nop(operations, arguments):
         if response[0]:
             break
 
-    print('line:', line)
     print(operations[line], 'had to be', operations_test[line], 'on line', str(line) + ':', 'value after execution:',
           response[1])
 
