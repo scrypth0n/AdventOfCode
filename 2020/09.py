@@ -7,35 +7,38 @@ def make_data():
     return numbers
 
 
-def a(nums, k=0):
+def find_encoding_error(nums, k=0):
     check = False
     for i in range(k, 25 + k):
         for j in range(k, 25 + k):
             if nums[i] + nums[j] == nums[25 + k]:
                 check = True
     if check:
-        return a(nums, k + 1)
+        return find_encoding_error(nums, k + 1)
     else:
         return [nums[25 + k], k]
 
 
-def b(nums, num):
-    check = False
-    value = 0
-    for i in range(num[1], 25 + num[1]):
-        for j in range(num[1], 25 + num[1]):
-            for k in range(num[1], 25 + num[1]):
-                for l in range(num[1], 25 + num[1]):
-                    if nums[i] + nums[j] + nums[k] + nums[l] == num[0]:
-                        liste = (nums[i], nums[j], nums[k], nums[l])
-                        return min(liste) + max(liste)
+def find_weakness(nums, num):
+    count_nums_for_addition = 1
+    while True:
+        count_nums_for_addition += 1
+        for i in range(num[1] - 1 - count_nums_for_addition):
+            value_ports = 0
+            for j in range(count_nums_for_addition):
+                value_ports += nums[i + j]
+            if value_ports == num[0]:
+                list_ports = []
+                for j in range(count_nums_for_addition):
+                    list_ports.append(nums[i + j])
+                return min(list_ports) + max(list_ports)
 
 
 def main():
     data = make_data()
-    ab = a(data)
-    print('01:', ab[0])
-    print('02:', b(data, ab))
+    num = find_encoding_error(data)   #[number, location]
+    print('Encoding error:', num[0])
+    print('Encryption weakness', find_weakness(data, num))
 
 
 if __name__ == '__main__':
