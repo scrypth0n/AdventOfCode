@@ -36,7 +36,7 @@ def find_weakness(nums, num):
 
 def main():
     data = make_data()
-    num = find_encoding_error(data)   #[number, location]
+    num = find_encoding_error(data)   # [number, location]
     print('Encoding error:', num[0])
     print('Encryption weakness', find_weakness(data, num))
 
