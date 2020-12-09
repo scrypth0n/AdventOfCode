@@ -28,7 +28,7 @@ def find_weakness(nums, num):
             for j in range(count_nums_for_addition):
                 value_ports += nums[i + j]
             if value_ports == num[0]:
-                list_ports = [
+                list_ports = []
                 for j in range(count_nums_for_addition):
                     list_ports.append(nums[i + j])
                 return min(list_ports) + max(list_ports)
